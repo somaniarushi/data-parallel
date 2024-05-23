@@ -86,6 +86,16 @@ def average_gradients(models):
         model.fc2.weight.grad = avg_grad_fc2.to(model.device)
 
 
+def average_gradients_ring_allreduce(models):
+    """
+    The ring all reduce algorithm works like this. Imagine you have 4 GPUs.
+    - GPU 0 -> GPU 1 => GPU 1 has g0 + g1
+    - GPU 1 -> GPU 2 => GPU 2 has g1 + g2
+    - GPU 2 -> GPU 3 => GPU 3 has g2 + g3
+    - GPU 3 -> GPU 0 => GPU 0 has g3 + g0
+    """
+
+
 def step_optimizers(models):
     """
     Create optimizers for each of the model replicas and step them
