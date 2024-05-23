@@ -1,6 +1,6 @@
 import torch
-from model_base import create_data, create_model
-from torch_dp import (
+from src.model_base import create_data, create_model
+from src.torch_dp import (
     torch_dp_compute_loss_and_backward_pass,
     get_parallel_net,
     torch_step_optimizer,
@@ -11,7 +11,7 @@ from simple_dp import (
     average_gradients,
     step_optimizers,
 )
-from tooling import (
+from src.tooling import (
     assert_models_same_weights,
     print_impl_diff,
 )

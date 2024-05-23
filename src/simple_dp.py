@@ -1,5 +1,5 @@
 import torch
-from base import Model
+from src.model_base import Model
 
 torch.manual_seed(0)
 
