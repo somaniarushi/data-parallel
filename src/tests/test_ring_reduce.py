@@ -1,5 +1,5 @@
 import torch
-from src.tests.ring_reduce import ring_reduce
+from src.ring_reduce import ring_reduce
 
 
 def test_ring_reduce_3_tensors() -> None:
